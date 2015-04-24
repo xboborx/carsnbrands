@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  get 'brands/all' => 'brands#index'
+  get 'brands/byid' => 'brands#view'
+  get 'brands/:id' => 'brands#view'
+  get 'brands' => 'brands#index'
+
+  delete 'brands/:id' => 'brands#destroy'
+
+  post 'brands' => 'brands#create'
+
+  put 'brands/:id' => 'brands#update'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

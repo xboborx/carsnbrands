@@ -1,0 +1,52 @@
+<div class="container">
+<h1>Добро пожаловать!</h1>
+
+  <table class="table table-striped table-hover ">
+    <thead>
+    <tr class="success">
+      <th>Модель</th>
+      <th>Год выпуска</th>
+      <th>Марка</th>
+      <th>Цвет</th>
+      <th>Изображение</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <%  @cars.each do |car| %>
+        <tr>
+          <td><%= car.model %></td>
+          <td> <%= car.year %> </td>
+          <td> <%= car.brand_id %> </td>
+          <td> <%= car.color %> </td>
+          <td> <%= image_tag(car.image,  height: '100', width: '100') %> </td>
+          <td> <%= link_to("Удалить", 'http://localhost:3001/cars/' + car.id.to_s, :method => :delete) %> </td>
+        </tr>
+    <% end  %>
+    </tbody>
+  </table>
+
+  <table class="table table-striped table-hover ">
+    <thead>
+    <tr class="warning">
+      <th>Название</th>
+      <th>Страна производитель</th>
+      <th>Изображение</th>
+      <th>Описание</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <%  @brands.each do |b| %>
+        <tr>
+          <td><%= b.name %></td>
+          <td> <%= b.country %> </td>
+          <td> <%= image_tag(b.image,  height: '100', width: '100') %>  </td>
+          <td> <%= b.description %> </td>
+          <td> <%= link_to("Удалить", 'http://localhost:3002/brands/' + b.id.to_s, :method => :delete) %> </td>
+        </tr>
+    <% end  %>
+    </tbody>
+  </table>
+
+</div>
