@@ -21,8 +21,26 @@ class WelcomeController < ApplicationController
 
     @brands = getAllBrands
 
+
+
     #render :json => brand.as_json
 
+  end
+
+  def car
+
+  end
+
+  def brand
+
+  end
+
+  def addBrand
+
+  end
+
+  def addCar
+    @brandnames
   end
 
   private
@@ -33,5 +51,13 @@ class WelcomeController < ApplicationController
 
   def getAllBrands
     return Brand.all
+  end
+
+  def getAllBrandNames
+    return
+  end
+
+  def getBrandNameFromCar(car)
+    return Brand.find_by_id(car.brand_id).name
   end
 end

@@ -1,0 +1,39 @@
+<div class="container">
+  <%= form_tag 'http://localhost:3001/cars', class: "form-horizontal" do %>
+      <fieldset>
+        <div class="form-group">
+          <%= label_tag(:model, "Модель", class: 'col-lg-2 control-label') %>
+          <div class="col-lg-10">
+            <%= text_field_tag(:model, nil, class: 'form-control') %>
+          </div>
+
+          <%= label_tag(:year, "Год выпуска", class: 'col-lg-2 control-label') %>
+          <div class="col-lg-10">
+            <%= text_field_tag(:year, nil, class: 'form-control') %>
+          </div>
+
+          <%= label_tag(:brand_id, "Марка", class: 'col-lg-2 control-label') %>
+          <div class="col-lg-10 selectpicker">
+            <% brands_array = Brand.all.map { |b| [b.name, b.id] } %>
+            <%= select_tag 'brand_id', options_for_select(brands_array) %>
+          </div>
+
+          <%= label_tag(:color, "Цвет", class: 'col-lg-2 control-label') %>
+          <div class="col-lg-10">
+            <%= text_field_tag(:color, nil, class: 'form-control') %>
+          </div>
+
+          <%= label_tag(:image, "Изображение", class: 'col-lg-2 control-label') %>
+          <div class="col-lg-10">
+            <%= text_field_tag(:image, nil, class: 'form-control') %>
+          </div>
+
+        </div>
+        <div class="form-group">
+          <div class="col-lg-10 col-lg-offset-2">
+            <%= submit_tag("Добавить", class: 'btn btn-primary') %>
+          </div>
+        </div>
+      </fieldset>
+  <% end %>
+</div>

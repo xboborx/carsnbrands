@@ -1,0 +1,33 @@
+<div class="container">
+  <%= form_tag 'http://localhost:3002/brands', class: "form-horizontal" do %>
+      <fieldset>
+        <div class="form-group">
+          <%= label_tag(:name, "Название марки", class: 'col-lg-2 control-label') %>
+          <div class="col-lg-10">
+            <%= text_field_tag(:name, nil, class: 'form-control') %>
+          </div>
+
+          <%= label_tag(:country, "Страна производитель", class: 'col-lg-2 control-label') %>
+          <div class="col-lg-10">
+            <%= text_field_tag(:country, nil, class: 'form-control') %>
+          </div>
+
+          <%= label_tag(:description, "Описание", class: 'col-lg-2 control-label') %>
+          <div class="col-lg-10">
+            <%= text_field_tag(:description, nil, class: 'form-control') %>
+          </div>
+
+          <%= label_tag(:image, "Ссылка на изображение", class: 'col-lg-2 control-label') %>
+          <div class="col-lg-10">
+            <%= text_field_tag(:image, nil, class: 'form-control') %>
+          </div>
+
+        </div>
+        <div class="form-group">
+          <div class="col-lg-10 col-lg-offset-2">
+            <%= submit_tag("Добавить", class: 'btn btn-primary') %>
+          </div>
+        </div>
+      </fieldset>
+  <% end %>
+</div>
